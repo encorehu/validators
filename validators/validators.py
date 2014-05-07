@@ -31,7 +31,7 @@ class StringValidator(BaseValidator):
             raise ValidateException('Invalid Value')
 
 class CellPhoneValidator(BaseValidator):
-    cellphone_heads=[
+    cellphone_starts=[
         '130', '131', '132', '133', '134', '135', '136', '137', '138', '139',
         '145', '147',
         '150', '151', '152', '153', '155', '156', '157', '158', '159',
@@ -43,7 +43,7 @@ class CellPhoneValidator(BaseValidator):
 
         value=value.strip()
         if len(value) == 11:
-            if value[:3] in self.cellphone_heads:
+            if value[:3] in self.cellphone_starts:
                 return True
         return False
 
