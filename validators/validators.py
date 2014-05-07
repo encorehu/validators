@@ -30,6 +30,12 @@ class StringValidator(BaseValidator):
         else:
             raise ValidateException('Invalid Value')
 
+class LengthValidator(BaseValidator):
+    '''length check'''
+    def validate(self, value, length=-1):
+        if len(value) != length:
+            raise ValidateException('Invalid Value Length')
+
 class CellPhoneValidator(BaseValidator):
     cellphone_starts=[
         '130', '131', '132', '133', '134', '135', '136', '137', '138', '139',
